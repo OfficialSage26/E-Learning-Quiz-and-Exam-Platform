@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #E3F2FD;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.elearning.controllers.DashboardController">
+    <top>
+        <AnchorPane style="-fx-background-color: #0D47A1;" prefHeight="80.0">
+            <children>
+                <Label fx:id="welcomeLabel" text="Welcome, Student!" textFill="white" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Button fx:id="logoutButton" onAction="#handleLogoutButtonAction" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-background-radius: 5;" text="Logout" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </top>
+
+    <left>
+        <VBox prefWidth="220.0" spacing="15.0" style="-fx-background-color: #1976D2; -fx-padding: 20;" alignment="TOP_CENTER">
+            <children>
+                <Label text="Navigation" textFill="white">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Button fx:id="startQuizButton" text="Start New Quiz" onAction="#handleStartQuizAction" prefWidth="180.0" style="-fx-background-color: #FFFFFF; -fx-text-fill: #0D47A1; -fx-font-weight: bold; -fx-background-radius: 5;">
+                     <font><Font size="14.0" /></font>
+                </Button>
+                <Button fx:id="viewProgressButton" text="View My Progress" onAction="#handleViewProgressAction" prefWidth="180.0" style="-fx-background-color: #FFFFFF; -fx-text-fill: #0D47A1; -fx-font-weight: bold; -fx-background-radius: 5;">
+                     <font><Font size="14.0" /></font>
+                </Button>
+                <Button fx:id="viewLeaderboardsButton" text="View Leaderboards" onAction="#handleViewLeaderboardsAction" prefWidth="180.0" style="-fx-background-color: #FFFFFF; -fx-text-fill: #0D47A1; -fx-font-weight: bold; -fx-background-radius: 5;">
+                     <font><Font size="14.0" /></font>
+                </Button>
+                  <Button fx:id="userGuideButton" text="User Guide / Tutorial" onAction="#handleUserGuideAction" prefWidth="180.0" style="-fx-background-color: #FFFFFF; -fx-text-fill: #0D47A1; -fx-font-weight: bold; -fx-background-radius: 5;">
+                     <font><Font size="14.0" /></font>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <AnchorPane fx:id="mainContentArea">
+            <padding>
+                <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+            </padding>
+            <children>
+                <Label text="Dashboard Content Area" textFill="#0D47A1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" alignment="CENTER">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <!-- Future content will be loaded here -->
+            </children>
+        </AnchorPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="40.0" style="-fx-background-color: #0D47A1;">
+            <children>
+                <Label text="© 2024 E-Learning Quiz Platform" textFill="white">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane> 

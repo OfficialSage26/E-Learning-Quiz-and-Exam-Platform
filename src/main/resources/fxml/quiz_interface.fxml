@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="quizInterfaceRoot" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ECEFF1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.elearning.controllers.QuizInterfaceController">
+    <top>
+        <VBox style="-fx-background-color: #0D47A1;">
+            <HBox alignment="CENTER_LEFT" spacing="20.0" prefHeight="60.0" style="-fx-padding: 0 20 0 20;">
+                <children>
+                    <Label fx:id="quizTitleLabel" text="Quiz Title Loading..." textFill="white">
+                        <font>
+                            <Font name="System Bold" size="20.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="questionProgressLabel" text="Q: -/-" textFill="#B0BEC5">
+                        <font>
+                            <Font name="System Italic" size="16.0" />
+                        </font>
+                    </Label>
+                    <HBox HBox.hgrow="ALWAYS" /> <!-- Spacer -->
+                    <Label fx:id="timerLabel" text="Time: 00:00" textFill="#FFD600">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+             <Label fx:id="quizStatusLabel" text="" textFill="yellow" style="-fx-padding: 5 20 5 20;">
+                <font><Font size="13.0"/></font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="questionScrollPane" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;">
+            <BorderPane.margin>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+            </BorderPane.margin>
+            <content>
+                <VBox fx:id="questionAreaVBox" spacing="15.0" style="-fx-padding: 20; -fx-background-color: #FFFFFF; -fx-background-radius: 8;">
+                    <children>
+                        <TextFlow fx:id="questionTextFlow" lineSpacing="5.0">
+                            <children>
+                                <Text text="Question text will appear here..." >
+                                     <font><Font size="16.0"/></font>
+                                </Text>
+                            </children>
+                        </TextFlow>
+                        <!-- ImageView fx:id="questionImageView" fitHeight="200.0" fitWidth="300.0" preserveRatio="true" /-->
+                        <VBox fx:id="answerOptionsVBox" spacing="10.0">
+                            <!-- RadioButtons or TextField will be added here dynamically by the controller -->
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <right>
+        <VBox prefWidth="200.0" style="-fx-background-color: #CFD8DC; -fx-padding: 10;" spacing="10.0" alignment="TOP_CENTER">
+            <BorderPane.margin>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="0" />
+            </BorderPane.margin>
+            <children>
+                <Label text="Question Navigation" textFill="#37474F">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ScrollPane fx:id="questionNavScrollPane" fitToWidth="true" prefHeight="400.0" VBox.vgrow="ALWAYS">
+                    <content>
+                        <FlowPane fx:id="questionNavFlowPane" hgap="5.0" vgap="5.0" prefWrapLength="180.0" />
+                    </content>
+                </ScrollPane>
+                <Label fx:id="markedForReviewCountLabel" text="Marked: 0" textFill="#455A64"/>
+            </children>
+        </VBox>
+    </right>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="15.0" prefHeight="70.0" style="-fx-background-color: #B0BEC5; -fx-padding: 15;">
+            <children>
+                <Button fx:id="prevQuestionButton" onAction="#handlePreviousQuestionAction" text="Previous" prefWidth="120.0" style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;">
+                    <font><Font size="14.0"/></font>
+                </Button>
+                <Button fx:id="nextQuestionButton" onAction="#handleNextQuestionAction" text="Next" prefWidth="120.0" style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;">
+                    <font><Font size="14.0"/></font>
+                </Button>
+                <Button fx:id="markForReviewButton" onAction="#handleMarkForReviewAction" text="Mark for Review" prefWidth="150.0" style="-fx-background-color: #FFA000; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;">
+                    <font><Font size="14.0"/></font>
+                </Button>
+                <HBox HBox.hgrow="ALWAYS" /> <!-- Spacer -->
+                 <Button fx:id="reviewAllButton" onAction="#handleReviewAllAction" text="Review All Answers" prefWidth="180.0" style="-fx-background-color: #0288D1; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;">
+                    <font><Font size="14.0"/></font>
+                </Button>
+                <Button fx:id="submitQuizButton" onAction="#handleSubmitQuizAction" text="Submit Quiz" prefWidth="130.0" style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;">
+                     <font><Font size="14.0"/></font>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane> 

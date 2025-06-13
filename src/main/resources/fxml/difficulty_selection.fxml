@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="difficultySelectionRoot" spacing="20.0" alignment="CENTER" 
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" 
+      fx:controller="com.school.elearning.controllers.DifficultySelectionController"
+      style="-fx-padding: 20; -fx-background-color: #F0F4F8;">
+    <children>
+        <Label fx:id="subjectTitleLabel" text="Selected Subject: [SubjectName]">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <Label text="Select Difficulty Level">
+            <font>
+                <Font name="System Regular" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="easyButton" text="Easy" onAction="#handleDifficultySelected" prefWidth="200.0" prefHeight="50.0" style="-fx-font-size: 16px; -fx-background-color: #90EE90;"/>
+        <Button fx:id="mediumButton" text="Medium" onAction="#handleDifficultySelected" prefWidth="200.0" prefHeight="50.0" style="-fx-font-size: 16px; -fx-background-color: #FFD700;"/>
+        <Button fx:id="hardButton" text="Hard" onAction="#handleDifficultySelected" prefWidth="200.0" prefHeight="50.0" style="-fx-font-size: 16px; -fx-background-color: #FF6347;"/>
+        <Label fx:id="statusLabel" text="" textFill="RED"/>
+    </children>
+</VBox> 

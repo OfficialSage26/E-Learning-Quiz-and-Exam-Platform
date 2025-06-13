@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17"
+            fx:controller="com.school.elearning.controllers.QuizResultsController"
+            prefHeight="700" prefWidth="900" style="-fx-background-color: #ECEFF1;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <top>
+        <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 10 0 20 0;">
+            <children>
+                <Label fx:id="quizTitleLabel" text="Quiz Results: [Quiz Title]" textFill="#0D47A1">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" spacing="30">
+                     <Label fx:id="overallScoreLabel" text="Overall Score: --%" textFill="#388E3C">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="questionsStatusLabel" text="Answered: -/- | Correct: -/-" textFill="#546E7A">
+                        <font>
+                            <Font name="System Regular" size="16.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="timeTakenLabel" text="Time Taken: --:--" textFill="#546E7A">
+                        <font>
+                            <Font name="System Regular" size="16.0" />
+                        </font>
+                    </Label>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="resultsScrollPane" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #FFFFFF; -fx-border-color: #B0BEC5; -fx-border-radius: 5;">
+            <content>
+                <VBox fx:id="questionResultsVBox" spacing="15.0" style="-fx-padding: 20;">
+                    <!-- Detailed question results will be populated here by the controller -->
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" prefHeight="60.0" style="-fx-padding: 20 0 0 0;">
+            <children>
+                <Button fx:id="backToDashboardButton" onAction="#handleBackToDashboardAction" text="Back to Dashboard" 
+                        style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" prefHeight="40.0" prefWidth="180.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane> 
